@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+    <!-- Configurações básicas da página e estilos CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio Pessoal</title>
+    <style>
+        /* Estilos gerais e layout da página */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #87CEEB;
+            margin: 0;
+            padding: 10px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            color: #000000;
+        }
+
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #87CEEB;
+            text-align: center;
+            font-size: 1.5em;
+            color: #000;
+            border-radius: 8px;
+        }
+        /* --- MENU DE NAVEGAÇÃO --- */
+        #menu ul {
+            list-style-type: none;
+            margin: 20px 0 30px 0;
+            padding: 0;
+            background-color: #87CEEB;
+            text-align: center;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #menu ul li {
+            display: inline-block;
+        }
+
+        #menu ul li a {
+            display: block;
+            color: #000000;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        #menu ul li a:hover {
+            background-color: #000000;
+            color: #fff;
+        }
+
+        /* --- SEÇÕES DO CONTEÚDO --- */
+        .fotos-centrais {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .img-post {
+            width: 150px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .post {
+            background: #f0f0f0;
+            color: #333;
+            padding: 20px;
+            margin: 30px auto 30px auto;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #0001;
+            text-align: justify;
+        }
+
+        /* --- RODAPÉ --- */
+        #footer {
+            clear: both;
+            text-align: center;
+            padding: 10px;
+            background: #fff;
+            color: #000000;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+        /* --- FORMULÁRIO DE CONTATO --- */
+        #contactForm {
+            background-color: #87CEEB;
+            padding: 20px;
+            border-radius: 20px;
+            max-width: 400px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            color: #000;
+        }
+
+        #contactForm label {
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: #000;
+        }
+
+        #contactForm input,
+        #contactForm textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+            color: #000;
+            background-color: #fff;
+        }
+
+        #contactForm button {
+            width: 120px;
+            align-self: flex-end;
+            padding: 8px 0;
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        #contactForm button:hover {
+            background-color: #004c99;
+        }
+
+        #feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        #portifolio {
+            margin-top: 60px;
+        }
+
+        /* --- LINKS DE PORTFÓLIO --- */
+        .links-portifolio {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .links-portifolio a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .links-portifolio a img {
+            border-radius: 12px;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 600px) {
+            .fotos-centrais {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .img-post {
+                width: 100%;
+                max-width: 320px;
+                height: auto;
+            }
+
+            .post {
+                margin: 20px 0;
+                padding: 10px;
+            }
+
+            #menu ul {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            #menu ul li {
+                display: block;
+            }
+        }
+        /* --- VÍDEO --- */
+        .video {
+            width: 100%;
+            max-width: 600px;
+            aspect-ratio: 16/9;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            margin: 20px auto;
+            background: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho com título, mensagem de boas-vindas e menu de navegação -->
+    <header>
+        <h1>Portifólio Pessoal</h1>
+        <div style="text-align: center; font-size: 1.2em; color: #333;">
+            <p>Bem-vindo ao meu portifólio! Aqui você encontrará informações sobre minha formação, projetos e como
+                entrar em contato comigo.</p>
+        </div>
+        <nav id="menu">
+            <ul>
+                <li><a href="#sobre-mim">Sobre mim</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portifolio">Portifólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção sobre mim com fotos e descrição pessoal -->
+    <div class="post" id="sobre-mim">
+        <h2>Sobre mim</h2>
+        <div class="fotos-centrais">
+            <img class="img-post" src="imagens/img4.jpg" alt="família" title="Família">
+            <img class="img-post" src="imagens/img1.jpg" alt="treino" title="Treino">
+            <img class="img-post" src="imagens/img2.jpg" alt="trabalho" title="Trabalho">
+        </div>
+        <p>Meu nome é Leandro, tenho 45 anos, casado, cristão e tenho uma família abençoada por Deus e sou
+            estudante de Análise e Desenvolvimento de Sistemas na CENTRO UNIVERSITÁRIO INTERNACIONAL - UNINTER.
+            Tenho interesse em programação, desenvolvimento web e tecnologias. Tenho como hobbies praticar
+            atividades físicas como caminhada, corrida, musculação e também gosto de praticar jiu-jitsu. Gosto de ler
+            livros, assistir filmes e séries.
+            Estou sempre em busca de aprender coisas novas e me aprimorar profissionalmente. Sou funcionário
+            público e trabalho na área de segurança pública há mais de 10 anos.</p>
+    </div>
+
+    <div class="post" id="formacao">
+        <h2>Formação</h2>
+        <div class="fotos-centrais">
+            <img class="img-post" src="imagens/rede1.jpg" alt="Rede de computadores" title="Rede de computadores">
+            <img class="img-post" src="imagens/manutencao.jpg" alt="Manutenção de computadores"
+                title="Manutenção de computadores">
+            <img class="img-post" src="imagens/torno.jpg" alt="Torno mecânico" title="Torno Mecânico">
+        </div>
+        <p>Na minha formação, cursei o ensino médio em formação geral, onde adquiri conhecimentos básicos em diversas
+            áreas. Em seguida, me especializei em Mecânica de Usinagem, onde aprendi a operar tornos mecânicos, além de
+            entender os princípios da usinagem de precisão. Posteriormente, cursei Manutenção de Computadores, onde
+            desenvolvi habilidades para diagnosticar e reparar problemas em hardware e software. E tive como
+            experiências profissionais: torneiro mecânico por um período e em seguida fui trabalhar numa indústria de
+            produtos químicos onde iniciei como auxiliar de produção e tive a oportunidade de trabalhar como almoxarife
+            e comprador, vindo acumular funções dentro da empresa como compras no geral, ficando responsável pela
+            manutenção preventiva e corretiva. Atualmente, estou cursando Análise e Desenvolvimento de Sistemas na
+            UNINTER, onde estou aprendendo sobre programação, desenvolvimento web e banco de dados.</p>
+    </div>
+
+    <!-- Seção de portfólio com links externos e vídeo -->
+    <div class="post" id="portifolio">
+        <h2>Portifólio</h2>
+        <p>Confira alguns dos meus projetos e portifólio:</p>
+        <div class="links-portifolio">
+            <a href="https://www.google.com" target="_blank">
+                <img src="imagens/google.png" alt="Logo Google" width="50" height="50">
+                Google
+            </a>
+            <a href="https://www.youtube.com" target="_blank">
+                <img src="imagens/youtube.jpg" alt="Logo YouTube" width="50" height="50">
+                YouTube
+            </a>
+            <a href="https://www.uninter.com" target="_blank">
+                <img src="imagens/uninter.png" alt="Logo Uninter" width="50" height="50">
+                Uninter
+            </a>
+        </div>
+        <video class="video" controls>
+            <source src="trabalho.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+    </div>
+
+    <!-- Seção de contato, formulário criado dinamicamente via JavaScript -->
+    <div class="post" id="contato">
+        <h2>Contato</h2>
+        <div id="contactContainer"></div>
+    </div>
+
+    <!-- Script para criar e validar o formulário de contato -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var container = document.getElementById('contactContainer');
+            var form = document.createElement('form');
+            form.id = 'contactForm';
+
+            var labelNome = document.createElement('label');
+            labelNome.textContent = 'Nome:';
+            labelNome.setAttribute('for', 'nome');
+            form.appendChild(labelNome);
+
+            var inputNome = document.createElement('input');
+            inputNome.type = 'text';
+            inputNome.id = 'nome';
+            inputNome.name = 'nome';
+            inputNome.required = true;
+            form.appendChild(inputNome);
+
+            var labelEmail = document.createElement('label');
+            labelEmail.textContent = 'E-mail:';
+            labelEmail.setAttribute('for', 'email');
+            form.appendChild(labelEmail);
+
+            var inputEmail = document.createElement('input');
+            inputEmail.type = 'email';
+            inputEmail.id = 'email';
+            inputEmail.name = 'email';
+            inputEmail.required = true;
+            form.appendChild(inputEmail);
+
+            var labelMsg = document.createElement('label');
+            labelMsg.textContent = 'Mensagem:';
+            labelMsg.setAttribute('for', 'mensagem');
+            form.appendChild(labelMsg);
+
+            var textareaMsg = document.createElement('textarea');
+            textareaMsg.id = 'mensagem';
+            textareaMsg.name = 'mensagem';
+            textareaMsg.rows = 4;
+            textareaMsg.required = true;
+            form.appendChild(textareaMsg);
+
+            var btn = document.createElement('button');
+            btn.type = 'submit';
+            btn.textContent = 'Enviar';
+            form.appendChild(btn);
+
+            var feedback = document.createElement('div');
+            feedback.id = 'feedback';
+            form.appendChild(feedback);
+
+            container.appendChild(form);
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (inputNome.value === '' || inputEmail.value === '' || textareaMsg.value === '') {
+                    feedback.textContent = 'Por favor, preencha todos os campos.';
+                    feedback.style.color = 'red';
+                } else {
+                    feedback.textContent = 'Mensagem enviada com sucesso!';
+                    feedback.style.color = 'green';
+                    form.reset();
+                }
+            });
+        });
+    </script>
+    <-- Rodapé da página -->
+        <div id="footer">
+            <p>&copy; 2025 Lmp-80. Todos os direitos reservados.</p>
+        </div>
+</body>
+
+</html>
